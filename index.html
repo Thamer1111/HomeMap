@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* إزالة جميع الهوامش وجعل الصفحة تغطي الشاشة بالكامل */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden; /* هذا السطر يمنع ظهور أشرطة التمرير (السكرول) */
+        }
+
+        /* تنسيق إطار الخريطة ليأخذ كامل المساحة */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* إزالة الحدود */
+            display: block; /* منع وجود مساحة بيضاء صغيرة أسفل الإطار */
+        }
+    </style>
 </head>
 
 <body>
-    <iframe href="https://www.mappedin.com/" title="Mappedin Map" name="Mappedin Map"
+    <iframe 
+        title="Mappedin Map" 
+        name="Mappedin Map"
         allow="clipboard-write 'self' https://app.mappedin.com; web-share 'self' https://app.mappedin.com"
-        scrolling="no" width="100%" height="100%" frameborder="0" style="border:0"
-        src="https://app.mappedin.com/map/6aa406ad73edd3000b22737c?embedded=true"></iframe>
+        src="https://app.mappedin.com/map/6aa406ad73edd3000b22737c?embedded=true">
+    </iframe>
 </body>
 
 </html>
