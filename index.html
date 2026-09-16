@@ -2,24 +2,27 @@
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- التعديل الأول: منع تكبير الصفحة الأساسية عن طريق الخطأ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Document</title>
     <style>
-        /* إزالة جميع الهوامش وجعل الصفحة تغطي الشاشة بالكامل */
         html, body {
             margin: 0;
             padding: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden; /* هذا السطر يمنع ظهور أشرطة التمرير (السكرول) */
+            width: 100%;
+            /* التعديل الثاني: استخدام dvh بدلاً من vh فقط لحل مشكلة شريط الرابط */
+            height: 100vh; /* متصفحات قديمة */
+            height: 100dvh; /* متصفحات حديثة: يتأقلم مع شريط الرابط */
+            overflow: hidden;
+            /* التعديل الثالث: منع الشاشة الأساسية من التفاعل مع سحب الإصبع */
+            touch-action: none; 
         }
 
-        /* تنسيق إطار الخريطة ليأخذ كامل المساحة */
         iframe {
             width: 100%;
             height: 100%;
-            border: none; /* إزالة الحدود */
-            display: block; /* منع وجود مساحة بيضاء صغيرة أسفل الإطار */
+            border: none; 
+            display: block; 
         }
     </style>
 </head>
